@@ -1,6 +1,8 @@
 # bootstrap-portfolio-template
 
-> A Vue.js project
+Un modèle de portfolio Bootstrap simple avec Vue JS.
+Le défilement est implémenté avec la fonction JavaScript scrollIntoView.
+Les boutons de défile en douceur vers la section suivante.
 
 ## Build Setup
 
