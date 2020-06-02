@@ -24,7 +24,7 @@
         <div class="container">
           <h2>What We Offer</h2>
           <div class="row">
-            
+            <offer v-for="(offer, index) in offers" :key="index" :offer="offer"></offer>
           </div>
         </div>
       </div>
@@ -35,8 +35,12 @@
 </template>
 
 <script>
+
+import offer from './assets/components/offer'
+
 export default {
   name: 'app',
+  components: { offer },
   data () {
     return {
       offers : [
