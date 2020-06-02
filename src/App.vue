@@ -1,5 +1,7 @@
 <template>
+
   <div id="app">
+
     <div class="container-fluid px-0">
       <div class="main-image">
         <section>
@@ -8,7 +10,17 @@
           <button class="btn btn-xl btn-light">Find More</button>
         </section>
       </div>
+
+      <div id="find-more" class="white-section">
+        <section>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
+          <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum quisquam, sapiente delectus laboriosam vero?</span>
+          <button class="btn btn-xl btn-dark">What we offer</button>
+        </section>
+      </div>
+
     </div>
+
   </div>
 </template>
 
@@ -92,6 +104,24 @@ export default {
     background-position: $bckP;
   }
 
+  @mixin btn($padding, $fontF){
+    padding: $padding;
+    font-family: $fontF;
+  }
+
+  @mixin styleTitle($fontS, $fontW, $marginB){
+    font-size: $fontS;
+    font-weight: $fontW;
+    margin-bottom: $marginB;
+  }
+
+  @mixin styleSpan($display, $padding-bottom, $font-size, $font-weight){
+    display: $display;
+    padding-bottom: $padding-bottom;
+    font-size: $font-size;
+    font-weight: $font-weight;
+  }
+
   /* Extends */
   %details {
     text-align: center;
@@ -114,23 +144,36 @@ export default {
 
       section {
         h1 {
-          font-size: 5em;
-          font-weight: bold;
-          margin-bottom: 30px;
+          @include styleTitle(5em, bold, 30px);
         }
         span {
-          display: block;
-          padding-bottom: 30px;
-          font-size: 1.6rem;
-          font-weight: 500;
+          @include styleSpan(block, 30px, 1.6rem, 500);
         }
 
         .btn-xl {
-          padding: 10px 17px;
-          font-family: serif;
+          @include btn(10px 17px, serif);
         }
       }
     }
+
+    .white-section {
+      padding: 120px 10px;
+      text-align: center;
+
+      h3{
+          @include styleTitle( 2rem, bold, 30px);
+        }
+
+      span {
+         @include styleSpan(block, 30px, 1.25rem, null);
+      }
+
+      .btn-xl {
+        @include btn(10px 17px, serif);
+      }
+    }
+
+
   }
   
 }
