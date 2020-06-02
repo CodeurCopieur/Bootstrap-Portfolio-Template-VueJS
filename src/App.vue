@@ -45,24 +45,24 @@ export default {
     return {
       offers : [
         {
-          icon: 'fa-mobile',
+          icon: require('./assets/icons/html5-brands.svg'),
           title: 'Responsive',
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
         },
         {
-          icon: 'fa-pencil-alt',
+          icon: require('./assets/icons/css3-alt-brands.svg'),
           title: 'Redesigned',
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
         },
         {
-          icon: 'fa-thumbs-up',
+          icon: require('./assets/icons/js-brands.svg'),
           title: 'Favorited',
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
         },
         {
-          icon: 'fa-question-circle',
+          icon: require('./assets/icons/vuejs-brands.svg'),
           title: 'Question ?',
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
         }
       ],
       recentProjects: [
@@ -185,6 +185,20 @@ export default {
       .btn-xl {
         @include btn(10px 17px, serif);
       }
+    }
+
+    .blue-section {
+      padding: 120px 10px;
+      background: #1d809f;
+      color: #fff;
+      text-align: center;
+
+      h2 {
+        @include styleTitle(3rem, bold, 50px);
+      }
+
+     
+
     }
 
 
