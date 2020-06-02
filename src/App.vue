@@ -1,21 +1,14 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <div class="container-fluid px-0">
+      <div class="main-image">
+        <section>
+          <h1>Portfolio</h1>
+          <span>A free bootstrap Template with Vue JS</span>
+          <button class="btn btn-xl btn-light">Find More</button>
+        </section>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -24,37 +17,121 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      offers : [
+        {
+          icon: 'fa-mobile',
+          title: 'Responsive',
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+        },
+        {
+          icon: 'fa-pencil-alt',
+          title: 'Redesigned',
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+        },
+        {
+          icon: 'fa-thumbs-up',
+          title: 'Favorited',
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+        },
+        {
+          icon: 'fa-question-circle',
+          title: 'Question ?',
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+        }
+      ],
+      recentProjects: [
+        {
+          image: 'https://i.picsum.photos/id/1/702/468.jpg',
+          title: 'Projet',
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+        },
+        {
+          image: 'https://i.picsum.photos/id/1/702/468.jpg',
+          title: 'Projet',
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+        },
+        {
+          image: 'https://i.picsum.photos/id/1/702/468.jpg',
+          title: 'Projet',
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+        },
+        {
+          image: 'https://i.picsum.photos/id/1/702/468.jpg',
+          title: 'Projet',
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
+        }
+      ]
     }
   }
 }
 </script>
 
 <style lang="scss">
+
+@import url('./assets/scss/index.scss');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-}
 
-h1, h2 {
-  font-weight: normal;
-}
+  /* Mixins */
+  @mixin goFlex($display, $justifyC, $alignItems){
+    display: $display;
+    justify-content: $justifyC;
+    align-items: $alignItems;
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+  @mixin detailsBack($bck, $bckS, $bckA, $bckP){
+    background: url($bck);
+    background-size: $bckS;
+    background-attachment: $bckA;
+    background-position: $bckP;
+  }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+  /* Extends */
+  %details {
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
+    min-height: 100vh;
+  }
 
-a {
-  color: #42b983;
+  .container-fluid {
+    .main-image {
+      @include goFlex(flex, center, center);
+      @include detailsBack('https://i.picsum.photos/id/1032/2880/1800.jpg', cover, fixed,left bottom);
+      color: #fff;
+      /*background: url('https://i.picsum.photos/id/1032/2880/1800.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: left bottom;*/
+
+      @extend %details;
+
+      section {
+        h1 {
+          font-size: 5em;
+          font-weight: bold;
+          margin-bottom: 30px;
+        }
+        span {
+          display: block;
+          padding-bottom: 30px;
+          font-size: 1.6rem;
+          font-weight: 500;
+        }
+
+        .btn-xl {
+          padding: 10px 17px;
+          font-family: serif;
+        }
+      }
+    }
+  }
+  
 }
 </style>
