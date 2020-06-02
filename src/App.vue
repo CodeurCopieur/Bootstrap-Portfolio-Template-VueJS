@@ -15,8 +15,18 @@
         <section>
           <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
           <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum illum quisquam, sapiente delectus laboriosam vero?</span>
-          <button class="btn btn-xl btn-dark">What we offer</button>
+          <button class="btn btn-xl btn-dark">What We offer</button>
         </section>
+      </div>
+
+
+      <div id="offer" class="blue-section">
+        <div class="container">
+          <h2>What We Offer</h2>
+          <div class="row">
+            
+          </div>
+        </div>
       </div>
 
     </div>
