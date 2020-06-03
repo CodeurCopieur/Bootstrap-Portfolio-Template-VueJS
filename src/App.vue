@@ -22,7 +22,8 @@
 
       <div id="offer" class="blue-section">
         <div class="container">
-          <h2>What We Offer</h2>
+          <h2>What We Skills</h2>
+          
           <div class="row">
             <offer v-for="(offer, index) in offers" :key="index" :offer="offer"></offer>
           </div>
@@ -45,22 +46,22 @@ export default {
     return {
       offers : [
         {
-          icon: require('./assets/icons/html5-brands.svg'),
+          icon: 'mobile',
           title: 'Responsive',
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
         },
         {
-          icon: require('./assets/icons/css3-alt-brands.svg'),
+          icon: 'pencil-alt',
           title: 'Redesigned',
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
         },
         {
-          icon: require('./assets/icons/js-brands.svg'),
+          icon: 'thumbs-up',
           title: 'Favorited',
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
         },
         {
-          icon: require('./assets/icons/vuejs-brands.svg'),
+          icon: 'question-circle',
           title: 'Question ?',
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
         }
@@ -95,7 +96,6 @@ export default {
 <style lang="scss">
 
 @import url('./assets/scss/index.scss');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css');
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
 
 #app {
@@ -197,10 +197,7 @@ export default {
         @include styleTitle(3rem, bold, 50px);
       }
 
-     
-
     }
-
 
   }
   
