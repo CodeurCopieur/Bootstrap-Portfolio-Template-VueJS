@@ -30,6 +30,22 @@
         </div>
       </div>
 
+      <div class="second-image">
+        <section>
+          <h2>Welcome to <i>your </i> <br> next Website !</h2>
+          <button class="btn btn-xl btn-dark">Find More</button>
+        </section>
+      </div>
+
+      <div id="recent-projects" class="white-section">
+        <div class="container">
+          <h3>Recent Projects</h3>
+          <div class="row no-gutters">
+              <iframe :src="project.link" class="col-lg-6" v-for="(project, index) in projects" :key="index"></iframe>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -66,25 +82,25 @@ export default {
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'
         }
       ],
-      recentProjects: [
+      projects: [
         {
-          image: 'https://i.picsum.photos/id/1/702/468.jpg',
-          title: 'Projet',
+          link: 'https://pmqvl.csb.app/',
+          title: 'Responsive Website | HTML5 CSS3 JS',
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
         },
         {
-          image: 'https://i.picsum.photos/id/1/702/468.jpg',
-          title: 'Projet',
+          link: 'https://codwerk.github.io/',
+          title: 'Landing Page Animate | HTML5 CSS3 GSAP',
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
         },
         {
-          image: 'https://i.picsum.photos/id/1/702/468.jpg',
-          title: 'Projet',
+          link: 'https://x8sbx.csb.app/',
+          title: 'Landing Page joker | HTML5 CSS3 JS',
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
         },
         {
-          image: 'https://i.picsum.photos/id/1/702/468.jpg',
-          title: 'Projet',
+          link: 'https://i5l24.csb.app/',
+          title: 'Fixed Menu With Smooth Animation | CSS JS',
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, beatae.'
         }
       ]
@@ -182,6 +198,10 @@ export default {
          @include styleSpan(block, 30px, 1.25rem, null);
       }
 
+      iframe {
+        min-height: 80vh;
+      }
+
       .btn-xl {
         @include btn(10px 17px, serif);
       }
@@ -197,6 +217,21 @@ export default {
         @include styleTitle(3rem, bold, 50px);
       }
 
+    }
+
+    .second-image {
+      @include goFlex(flex, center, center);
+      @include detailsBack('https://i.picsum.photos/id/1032/2880/1800.jpg', cover, fixed,left bottom);
+      @extend %details;
+      color: #fff;
+
+      h2 {
+        @include styleTitle(3em, bold, 30px);
+      }
+
+      .btn-xl {
+          @include btn(10px 17px, serif);
+      }
     }
 
   }
