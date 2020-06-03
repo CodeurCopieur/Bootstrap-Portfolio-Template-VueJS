@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import './icons'
+import './icons.js'
 
 new Vue({
   el: '#app',
