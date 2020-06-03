@@ -1,7 +1,7 @@
 <template>
   <div id="card-offer" class="col-lg-3 col-md-6 mb-5 mb-lg-0">
     <div class="icon mx-auto">
-      <img :src="offer.icon" />
+      <fa-icon :icon="offer.icon" />
      </div> 
      <h4>{{ offer.title }}</h4>
       <p>{{ offer.description }}</p>
@@ -26,11 +26,11 @@ export default {
       align-items: center;
       width: 120px;
       height: 120px;
-      background-color: #fff;
+      border: 5px solid #fff;
       border-radius: 50%;
 
-      img {
-        width: 30%;
+      svg {
+        font-size: 2em;
       }
     }
     h4 {
